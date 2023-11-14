@@ -9,7 +9,7 @@ CREATE TABLE users (
   picture VARCHAR(180) DEFAULT NULL,
   gender VARCHAR(255) NOT NULL,
   age INT NOT NULL,
-  also_know_as VARCHAR(36) NOT NULL
+  also_know_as VARCHAR(36) DEFAULT NULL
 );
 
 CREATE TABLE user_hobby (
