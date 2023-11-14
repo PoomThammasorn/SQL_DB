@@ -1,6 +1,6 @@
 CREATE TABLE users (
   user_id VARCHAR(10) PRIMARY KEY ,
-  username VARCHAR(16) DEFAULT NULL CHECK (LENGTH(username) >= 4),
+  username VARCHAR(16) NOT NULL CHECK (LENGTH(username) >= 4),
   password VARCHAR(255) NOT NULL CHECK (LENGTH(password) >= 8),
   citizen_ID VARCHAR(45) NOT NULL,
   email VARCHAR(255) NOT NULL,
