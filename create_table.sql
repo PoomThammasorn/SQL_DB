@@ -50,11 +50,11 @@ CREATE TABLE appointment_rating (
 );
 
 CREATE TABLE appointment_transaction (
-    tansaction_id VARCHAR(8) PRIMARY KEY,
+    transaction_id VARCHAR(8) PRIMARY KEY,
     payment_method VARCHAR(13) NOT NULL,
     amount INT NOT NULL,
     timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL,
-    FOREIGN KEY (tansaction_id) REFERENCES appointment(tansaction_id)
+    FOREIGN KEY (transaction_id) REFERENCES appointment(transaction_id)
 );
 
 CREATE TABLE make_appointment (
