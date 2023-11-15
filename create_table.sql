@@ -2,12 +2,12 @@ CREATE TABLE users (
   user_id VARCHAR(10) PRIMARY KEY ,
   username VARCHAR(16) NOT NULL CHECK (LENGTH(username) >= 4),
   password VARCHAR(255) NOT NULL CHECK (LENGTH(password) >= 8),
-  citizen_ID VARCHAR(45) NOT NULL,
+  citizen_ID VARCHAR(13) NOT NULL,
   email VARCHAR(255) NOT NULL,
   name VARCHAR (36) NOT NULL,
-  address VARCHAR(36) NOT NULL,
-  picture VARCHAR(180) DEFAULT NULL,
-  gender VARCHAR(255) NOT NULL,
+  address VARCHAR(180) NOT NULL,
+  picture VARCHAR(255) DEFAULT NULL,
+  gender VARCHAR(1) NOT NULL,
   age INT NOT NULL,
   also_know_as VARCHAR(36) DEFAULT NULL
 );
@@ -29,14 +29,6 @@ CREATE TABLE provider (
     avg_rating_score NUMERIC(2,1) NOT NULL,
     FOREIGN KEY (provider_id) REFERENCES users(user_id)
 );
-
-CREATE TABLE provider_review (
-    provider_id VARCHAR(10) PRIMARY KEY,
-    review_message VARCHAR(1000) DEFAULT NULL,
-    rating_score INT NOT NULL CHECK (rating_score BETWEEN 1 AND 10),
-    FOREIGN KEY (provider_id) REFERENCES provider(provider_id)
-);
-
 
 CREATE TABLE appointment (
     appointment_id VARCHAR(10) PRIMARY KEY,
