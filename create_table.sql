@@ -20,8 +20,8 @@ CREATE TABLE user_hobby (
 );
 
 CREATE TABLE customer (
-    user_id VARCHAR(10) PRIMARY KEY,
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+    customer_id VARCHAR(10) PRIMARY KEY,
+    FOREIGN KEY (customer_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE provider (
@@ -116,22 +116,12 @@ CREATE TABLE chat (
 );
 
 CREATE TABLE message (
-    sender VARCHAR(10) NOT NULL,
+    sender VARCHAR(10) NOT NULL ,
     date_time TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     chatroom_id VARCHAR(10) NOT NULL,
     image VARCHAR(300) DEFAULT NULL,
     text VARCHAR(300) DEFAULT NULL,
     PRIMARY KEY (sender, date_time, chatroom_id),
+    FOREIGN KEY (sender) REFERENCES users(user_id),
     FOREIGN KEY (chatroom_id) REFERENCES chatroom(chatroom_id)
 );
-
--- CREATE TABLE message_info (
---     sender VARCHAR(10) NOT NULL,
---     date_time TIMESTAMP WITHOUT TIME ZONE NOT NULL,
---     image VARCHAR(300) NULL,
---     text VARCHAR(300) NULL,
---     PRIMARY KEY (sender, date_time),
---     FOREIGN KEY (sender) REFERENCES message(sender),
---     FOREIGN KEY (date_time) REFERENCES message(date_time)
--- );
--- I'm not sure if 'message_info' is still needed.
