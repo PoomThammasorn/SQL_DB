@@ -26,7 +26,6 @@ CREATE TABLE customer (
 
 CREATE TABLE provider (
     provider_id VARCHAR(10) PRIMARY KEY,
-    avg_rating_score NUMERIC(3,1) NOT NULL CHECK (avg_rating_score <= 10),
     FOREIGN KEY (provider_id) REFERENCES users(user_id)
 );
 
