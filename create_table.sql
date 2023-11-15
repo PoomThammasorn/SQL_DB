@@ -72,7 +72,7 @@ CREATE TABLE make_appointment (
     appointment_id VARCHAR(10) NOT NULL,
     PRIMARY KEY (provider_id, customer_id, appointment_id),
     FOREIGN KEY (provider_id) REFERENCES provider(provider_id),
-    FOREIGN KEY (customer_id) REFERENCES customer(user_id),
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
     FOREIGN KEY (appointment_id) REFERENCES appointment(appointment_id)
 );
 
@@ -98,7 +98,7 @@ CREATE TABLE search_by (
     location ARCHAR(30) NOT NULL,
     PRIMARY KEY (provider_id, customer_id, location),
     FOREIGN KEY (provider_id) REFERENCES provider(provider_id),
-    FOREIGN KEY (customer_id) REFERENCES customer(user_id)
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
 
 CREATE TABLE chatroom (
@@ -111,7 +111,7 @@ CREATE TABLE chat (
     chatroom_id VARCHAR(10) NOT NULL,
     PRIMARY KEY (provider_id, customer_id, chatroom_id),
     FOREIGN KEY (provider_id) REFERENCES provider(provider_id),
-    FOREIGN KEY (customer_id) REFERENCES customer(user_id),
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
     FOREIGN KEY (chatroom_id) REFERENCES chatroom(chatroom_id)
 );
 
