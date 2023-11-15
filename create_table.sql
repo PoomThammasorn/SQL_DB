@@ -87,7 +87,7 @@ CREATE TABLE activity_filter (
 CREATE TABLE search_by (
     provider_id VARCHAR(10) NOT NULL,
     customer_id VARCHAR(10) NOT NULL,
-    location ARCHAR(30) NOT NULL,
+    location VARCHAR(30) NOT NULL,
     PRIMARY KEY (provider_id, customer_id, location),
     FOREIGN KEY (provider_id) REFERENCES provider(provider_id),
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
